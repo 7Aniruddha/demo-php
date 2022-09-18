@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>login_form</title>
+
+  <link rel="icon" type="image/x-icon" href="https://faberinfinite.com/wp-content/uploads/2017/11/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+
+</head>
+<body class="bg-primary">
+<style>
+
+label#error_email {
+position: absolute;
+bottom: -27px;
+font-size: 12px;
+}
+
+.toggle-password {
+float: right;
+cursor: pointer;
+margin-right: 10px;
+margin-top: -25px;
+}
+
+</style>
+
+
+<div class="container mt-3">
+<div class="row">
+<div class="col-md-5 m-auto ">
+<div class="card p-4 mt-5">
+
+<div class="form-group text-center">
+<h1>Login Form</h1> 
+<small class="text-info">Login with your email and password.</small> <br><br>
+</div>
+
+    <form action="login.php" method="post">
+
+    <div class="form-group">
+        <input type="emailid" name="emailid" placeholder="Email address" class="form-control" id="emailid" aria-describedby="emailHelp">
+        <small id="emailHelp" class="text-info">We'll never share your login credential.</small>
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" id="passid" name="passid">
+        <i class="toggle-password fa fa-fw fa-eye-slash"></i>
+    </div>
+    
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary d-inline-block">LOGIN</button>
+    </div>
+
+    <div class="pb-2 justify-content-between d-flex">
+        <a href="/" class="text-primary">Forgot password?</a>
+        <span>New User? <a href="/" class="text-primary"> Register</a></span>
+    </div>
+
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(".toggle-password").click(function() {
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    input = $(this).parent().find("input");
+    if (input.attr("type") == "password") {
+        input.attr("type", "text");
+    } else {
+        input.attr("type", "password");
+    }
+});
+           
+</script>
+
+</body>
+</html>
